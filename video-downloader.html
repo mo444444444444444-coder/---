@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="محول روابط الفيديو إلى تنزيل مباشر من الهاتف">
+<title>نزّلها — محمل الفيديو</title>
+<style>
+:root{--bg:#071b18;--panel:#0d2a25;--panel2:#123a33;--line:#24544b;--gold:#e6c36a;--text:#f5f4ed;--muted:#a9beb8;--accent:#1fb57f}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% -10%,#17493f 0,#071b18 45%,#04110f 100%);color:var(--text);font-family:Tahoma,Arial,sans-serif}
+.wrap{width:min(920px,92%);margin:auto}.top{padding:20px 0}.brand{font-size:25px;font-weight:900;color:var(--gold)}.sub{color:var(--muted);font-size:13px;margin-top:4px}
+.hero{padding:54px 0 28px;text-align:center}.hero h1{font-size:clamp(38px,7vw,70px);margin:0 0 14px}.hero h1 span{color:var(--gold)}.hero p{color:var(--muted);font-size:17px;line-height:1.9;max-width:680px;margin:auto}
+.box{background:linear-gradient(180deg,#10332e,#0a2521);border:1px solid var(--line);border-radius:26px;padding:18px;box-shadow:0 18px 55px #0007}
+.inputrow{display:flex;gap:10px}.inputrow input{flex:1;min-width:0;padding:17px 18px;border-radius:15px;border:1px solid var(--line);background:#061714;color:#fff;font-size:16px;outline:none}.inputrow input:focus{border-color:var(--gold)}button,.select{border:0;border-radius:15px;padding:15px 20px;font-size:16px;font-weight:900;cursor:pointer}.mainbtn{background:var(--accent);color:#04120f;min-width:150px}.ghost{background:var(--panel2);color:#fff;border:1px solid var(--line)}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.option{background:#0a211e;border:1px solid var(--line);border-radius:14px;padding:12px}.option label{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}.option select{width:100%;background:transparent;color:#fff;border:0;outline:0;font-size:15px;padding:4px}
+.status{display:none;margin-top:14px;padding:13px 15px;border-radius:14px;background:#09211d;border:1px solid var(--line);color:#d9ebe5;line-height:1.8}.status.show{display:block}.actions{display:none;gap:10px;margin-top:12px;flex-wrap:wrap}.actions.show{display:flex}.actions a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:#06130f;background:var(--gold);padding:14px 18px;border-radius:14px;font-weight:900}.note{margin-top:16px;color:var(--muted);font-size:12px;line-height:1.8;text-align:center}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0}.feat{background:#0b2723;border:1px solid var(--line);border-radius:18px;padding:17px}.feat b{display:block;color:var(--gold);font-size:17px;margin-bottom:7px}.feat span{color:var(--muted);font-size:13px;line-height:1.7}
+footer{padding:30px 0 50px;text-align:center;color:#7f9891;font-size:12px}
+@media(max-width:700px){.inputrow{flex-direction:column}.mainbtn{width:100%}.options,.features{grid-template-columns:1fr}.hero{padding-top:30px}.box{padding:13px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><div class="brand">⬇ نزّلها</div><div class="sub">أداة بسيطة لتحويل رابط الفيديو إلى تنزيل</div></div></header>
+<main class="wrap">
+<section class="hero"><h1>حط الرابط… <span>ونزّل الفيديو</span></h1><p>انسخ رابط الفيديو وضعه هنا. الروابط المباشرة لملفات الفيديو يمكن تنزيلها مباشرة، وروابط المنصات الشائعة نفتحها في مسار تنزيل مخصص مع الرابط جاهز.</p></section>
+<section class="box">
+<form id="form">
+<div class="inputrow"><input id="url" type="url" placeholder="https://..." autocomplete="off" required><button class="mainbtn">ابدأ التنزيل</button></div>
+<div class="options">
+<div class="option"><label>نوع الملف</label><select id="mode"><option value="video">فيديو</option><option value="audio">صوت فقط</option></select></div>
+<div class="option"><label>الجودة المفضلة للهاتف</label><select id="quality"><option value="720">720p</option><option value="1080">1080p</option><option value="480">480p</option><option value="360">360p</option><option value="max">أعلى جودة متاحة</option></select></div>
+</div>
+</form>
+<div id="status" class="status"></div>
+<div id="actions" class="actions"></div>
+<div class="note">استخدم الأداة مع الفيديوهات التي تملك حق تنزيلها أو لديك إذن باستخدامها. بعض المنصات تمنع التنزيل أو تغيّر روابطها.</div>
+</section>
+<section class="features">
+<div class="feat"><b>📱 موبايل أولًا</b><span>واجهة كبيرة وواضحة وتناسب الهاتف والكمبيوتر.</span></div>
+<div class="feat"><b>⚡ رابط مباشر</b><span>ملفات MP4 وWebM وMOV المباشرة يمكن فتحها وتنزيلها من المتصفح.</span></div>
+<div class="feat"><b>🔗 منصات متعددة</b><span>للروابط العامة استخدم مسار Cobalt الموثق مع الرابط مملوء تلقائيًا.</span></div>
+</section>
+</main>
+<footer>نزّلها — مشروع مستقل • واجهة بدون إعلانات</footer>
+<script>
+const $=s=>document.querySelector(s);
+const statusBox=$('#status'), actions=$('#actions');
+const directExt=/\.(mp4|webm|mov|m4v|mkv|avi)(\?.*)?$/i;
+const knownHost=/(youtube\.com|youtu\.be|instagram\.com|tiktok\.com|x\.com|twitter\.com|facebook\.com|vimeo\.com|reddit\.com|soundcloud\.com)/i;
+function msg(t){statusBox.textContent=t;statusBox.classList.add('show')}
+function clearActions(){actions.innerHTML='';actions.classList.remove('show')}
+function isHttps(u){return /^https:\/\//i.test(u)}
+function cobalt(u){
+  const hash=encodeURIComponent(u);
+  return 'https://cobalt.tools/#'+hash;
+}
+async function directDownload(u){
+  clearActions();
+  msg('هذا يبدو رابط ملف فيديو مباشر. سأجهّز التنزيل…');
+  const a=document.createElement('a');
+  a.href=u;a.download='video';a.target='_blank';a.rel='noopener';
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>{
+    actions.innerHTML='<a href="'+u.replace(/"/g,'&quot;')+'" target="_blank" rel="noopener">فتح الفيديو / حفظه يدويًا</a>';
+    actions.classList.add('show');
+    msg('لو المتصفح لم يبدأ التنزيل تلقائيًا، اضغط «فتح الفيديو / حفظه يدويًا». بعض الخوادم تمنع التنزيل المباشر من داخل صفحة أخرى.');
+  },500);
+}
+$('#form').addEventListener('submit',async e=>{
+ e.preventDefault();clearActions();
+ const u=$('#url').value.trim();
+ if(!isHttps(u)){msg('اكتب رابطًا يبدأ بـ https://');return}
+ if(directExt.test(u)){await directDownload(u);return}
+ if(knownHost.test(u)){
+   msg('جاري تحويلك لمسار تنزيل مخصص، والرابط سيكون مملوءًا تلقائيًا.');
+   const a=document.createElement('a');a.href=cobalt(u);a.target='_blank';a.rel='noopener';a.textContent='فتح التنزيل';
+   actions.appendChild(a);actions.classList.add('show');a.click();return;
+ }
+ msg('الرابط ليس ملف فيديو مباشرًا. سأفتح مسار التنزيل العام مع الرابط كما هو.');
+ const a=document.createElement('a');a.href=cobalt(u);a.target='_blank';a.rel='noopener';a.textContent='فتح التنزيل';
+ actions.appendChild(a);actions.classList.add('show');a.click();
+});
+</script>
+</body></html>
