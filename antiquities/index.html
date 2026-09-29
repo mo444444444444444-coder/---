@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>موسوعة الآثار المصرية الكاملة</title>
+<meta name="description" content="موسوعة تفاعلية للآثار والتراث المصري عبر العصور">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top"><div class="brand"><span class="ankh">☥</span><div><b>موسوعة الآثار المصرية</b><small>رحلة عبر آلاف السنين</small></div></div><nav><a href="#home">الرئيسية</a><a href="#explore">استكشف الآثار</a><a href="#timeline">الخط الزمني</a><a href="#museums">المتاحف</a></nav></header>
+<main id="home">
+<section class="hero"><div class="hero-copy"><span class="eyebrow">مصر الخالدة • من عصور ما قبل التاريخ إلى العصر الحديث</span><h1>اكتشف <em>مصر</em><br>كما لم ترها من قبل</h1><p>موسوعة رقمية تجمع المواقع الأثرية والملوك والمتاحف والقصص والوسائط في تجربة واحدة.</p><div class="search"><span>⌕</span><input id="search" placeholder="ابحث عن هرم، معبد، ملك، متحف..."><button onclick="searchArtifacts()">بحث</button></div></div><div class="hero-mark"><div>𓂀</div><span>مصر القديمة</span></div></section>
+<section class="stats"><div><b>7000+</b><span>عام من التاريخ</span></div><div><b>7</b><span>عصور رئيسية</span></div><div><b>27</b><span>محافظة مصرية</span></div><div><b>∞</b><span>قصص لا تنتهي</span></div></section>
+<section id="explore" class="section"><div class="section-head"><div><span class="eyebrow">قاعدة المعرفة</span><h2>استكشف الآثار</h2></div><div class="filters"><select id="era" onchange="render()"><option value="">كل العصور</option><option>مصر القديمة</option><option>اليوناني والروماني</option><option>القبطي</option><option>الإسلامي</option><option>الحديث</option></select><select id="type" onchange="render()"><option value="">كل الأنواع</option><option>هرم</option><option>معبد</option><option>مقبرة</option><option>متحف</option><option>تمثال</option></select></div></div><div id="cards" class="grid"></div></section>
+<section id="timeline" class="section dark"><span class="eyebrow">خط الزمن</span><h2>محطات من الحضارة المصرية</h2><div class="timeline"><div><b>3100 ق.م</b><strong>توحيد القطرين</strong><span>بداية عصر الأسرات وبناء دولة مركزية.</span></div><div><b>2686–2181 ق.م</b><strong>عصر الأهرامات</strong><span>ازدهار الدولة القديمة وبناء أهرامات الجيزة.</span></div><div><b>1550–1070 ق.م</b><strong>المملكة الحديثة</strong><span>عصر الإمبراطوريات والمعابد الملكية الكبرى.</span></div><div><b>332 ق.م</b><strong>العصر البطلمي</strong><span>بداية مرحلة جديدة امتزجت فيها الثقافات.</span></div></div></section>
+<section id="museums" class="section"><span class="eyebrow">مؤسسات الحفظ</span><h2>المتاحف المصرية</h2><div class="museum"><div><span>01</span><h3>المتحف المصري بالقاهرة</h3><p>مجموعة ضخمة من آثار مصر القديمة في قلب القاهرة.</p></div><div><span>02</span><h3>المتحف القومي للحضارة المصرية</h3><p>رحلة عبر الحضارات المصرية وصولاً إلى العصر الحديث.</p></div><div><span>03</span><h3>المتحف المصري الكبير</h3><p>مجمع ثقافي وأثري ضخم مخصص لتراث مصر القديمة.</p></div></div></section>
+<section class="cta"><div><span class="eyebrow">المشروع</span><h2>مصر ليست صفحة في كتاب…<br>مصر قصة تُكتشف.</h2><p>نسخة أولى قابلة للتوسع لتضم آلاف السجلات والمصادر والصور والفيديوهات الرسمية.</p></div><div class="seal">𓃀<br><small>EGYPT</small></div></section>
+</main><footer>تطوير وتنفيذ: <b>محمد شعبان محارب</b> • موسوعة الآثار المصرية الكاملة</footer>
+<script src="data.js"></script><script src="app.js"></script>
+</body></html>
