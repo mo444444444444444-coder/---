@@ -3,28 +3,87 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>موسوعة الآثار المصرية الكاملة</title>
-<meta name="description" content="موسوعة رقمية متكاملة للمواقع والآثار والمتاحف والحضارة المصرية عبر العصور.">
+<meta name="description" content="موسوعة رقمية لاستكشاف الآثار والمواقع والمتاحف المصرية عبر العصور.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Noto+Kufi+Arabic:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="topline"></div>
-<header class="top"><a class="brand" href="#home"><span class="brand-mark">𓂀</span><span><b>موسوعة الآثار المصرية</b><small>رحلة موثقة عبر الحضارة</small></span></a>
-<nav><a href="#explore">الآثار</a><a href="#eras">العصور</a><a href="#timeline">الخط الزمني</a><a href="#museums">المتاحف</a><a href="#videos">الفيديوهات</a></nav><button class="saved" onclick="showFavorites()">♡ <span id="favCount">0</span></button></header>
+<div class="grain"></div>
+<header class="site-header">
+  <a class="brand" href="#home"><span class="brand-symbol">𓂀</span><span><strong>موسوعة الآثار المصرية</strong><small>رحلة في ذاكرة مصر</small></span></a>
+  <nav class="main-nav"><a href="#explore">استكشف</a><a href="#eras">العصور</a><a href="#timeline">الخط الزمني</a><a href="#museums">المتاحف</a><a href="#videos">الفيديو</a></nav>
+  <button class="nav-fav" onclick="showFavorites()">المحفوظات <b id="favCount">0</b></button>
+</header>
+
 <main id="home">
-<section class="hero"><div class="hero-overlay"></div><div class="hero-inner"><div class="hero-copy"><span class="kicker">𓋹 مصر الخالدة • موسوعة رقمية</span><h1>اكتشف <em>مصر</em><br>طبقةً بعد طبقة</h1><p>من الأهرامات والمعابد إلى المتاحف والآثار القبطية والإسلامية. ابحث، استكشف، شاهد، واحفظ ما يلفت انتباهك.</p>
-<div class="search"><span>⌕</span><input id="search" oninput="liveSearch()" placeholder="ابحث عن هرم، معبد، ملك، متحف، محافظة..."><button onclick="searchArtifacts()">استكشف</button></div>
-<div class="quick"><button onclick="setFilter('مصر القديمة')">مصر القديمة</button><button onclick="setFilter('اليوناني والروماني')">اليوناني والروماني</button><button onclick="setFilter('القبطي')">القبطي</button><button onclick="setFilter('الإسلامي')">الإسلامي</button></div>
-</div><div class="hero-emblem"><div>𓁟</div><span>EGYPT<br><small>HERITAGE ENCYCLOPEDIA</small></span></div></div></section>
-<section class="stats"><div><b id="statSites">24+</b><span>موقعًا وقطعة معرفية</span></div><div><b>5</b><span>عصور رئيسية</span></div><div><b>27</b><span>محافظة مصرية</span></div><div><b>114+</b><span>سنة من البحث الأثري الحديث</span></div></section>
-<section id="explore" class="section"><div class="section-head"><div><span class="eyebrow">قاعدة المعرفة</span><h2>استكشف الآثار</h2><p class="lead">اختَر العصر أو النوع أو المحافظة، ثم افتح أي بطاقة لمعرفة التفاصيل والمصادر والصور والوسائط.</p></div><div class="filters"><input id="governorate" placeholder="المحافظة" oninput="render()"><select id="era" onchange="render()"><option value="">كل العصور</option><option>مصر القديمة</option><option>اليوناني والروماني</option><option>القبطي</option><option>الإسلامي</option><option>الحديث</option></select><select id="type" onchange="render()"><option value="">كل الأنواع</option><option>هرم</option><option>معبد</option><option>مقبرة</option><option>حصن</option><option>متحف</option><option>كنيسة</option><option>مسجد</option><option>تمثال</option></select></div></div><div id="cards" class="grid"></div></section>
-<section id="eras" class="section eras"><div class="section-head"><div><span class="eyebrow">رحلة زمنية</span><h2>العصور المصرية</h2></div></div><div class="era-grid"><button onclick="setFilter('مصر القديمة')"><span>𓂀</span><b>مصر القديمة</b><small>العصر الفرعوني والدولة القديمة والوسطى والحديثة</small></button><button onclick="setFilter('اليوناني والروماني')"><span>𓏏</span><b>اليوناني والروماني</b><small>البطالمـة والرومان وآثار الإسكندرية وصعيد مصر</small></button><button onclick="setFilter('القبطي')"><span>✠</span><b>العصر القبطي</b><small>الكنائس والأديرة ومراكز التراث المسيحي</small></button><button onclick="setFilter('الإسلامي')"><span>۞</span><b>العصر الإسلامي</b><small>المساجد والقلاع والعمارة المملوكية والعثمانية</small></button></div></section>
-<section id="timeline" class="section dark"><span class="eyebrow">خط الزمن</span><h2>محطات كبرى في التاريخ المصري</h2><div class="timeline"><article><b>نحو 3100 ق.م</b><strong>بداية العصر الأسري</strong><span>تشكّل الدولة المصرية الموحدة في بدايات التاريخ الأسري.</span></article><article><b>2686–2181 ق.م</b><strong>الدولة القديمة</strong><span>عصر بناء الأهرامات وتطور العمارة الجنائزية الملكية.</span></article><article><b>1550–1070 ق.م</b><strong>الدولة الحديثة</strong><span>ازدهار المعابد الملكية والجبانات في طيبة.</span></article><article><b>332 ق.م – 395م</b><strong>اليوناني والروماني</strong><span>امتزاج التقاليد المصرية بالثقافات اليونانية والرومانية.</span></article></div></section>
-<section id="museums" class="section"><span class="eyebrow">مؤسسات الحفظ</span><h2>متاحف تستحق الاكتشاف</h2><div class="museum-grid"><article><span>01</span><h3>المتحف المصري بالقاهرة</h3><p>من أهم مجموعات آثار مصر القديمة في العالم.</p><a target="_blank" href="https://egymonuments.gov.eg/">المصادر الرسمية ↗</a></article><article><span>02</span><h3>المتحف القومي للحضارة المصرية</h3><p>رحلة عبر الحضارات المصرية وصولًا إلى العصر الحديث.</p><a target="_blank" href="https://nmec.gov.eg/">الموقع الرسمي ↗</a></article><article><span>03</span><h3>المتحف المصري الكبير</h3><p>مجمع ثقافي وأثري مخصص للتراث المصري القديم.</p><a target="_blank" href="https://grandegyptianmuseum.org/">الموقع الرسمي ↗</a></article></div></section>
-<section id="videos" class="section video-section"><div class="section-head"><div><span class="eyebrow">وسائط مرئية</span><h2>فيديوهات عن مصر وآثارها</h2><p class="lead">روابط إلى فيديوهات وقنوات رسمية يمكن الرجوع إليها أثناء التصفح.</p></div></div><div class="video-grid"><a target="_blank" href="https://www.youtube.com/@TourismandAntiquities" class="video-card"><span>▶</span><b>وزارة السياحة والآثار</b><small>قناة رسمية • فيديوهات وآثار ومتاحف</small></a><a target="_blank" href="https://www.youtube.com/@GrandEgyptianMuseum" class="video-card"><span>▶</span><b>المتحف المصري الكبير</b><small>جولات ومحتوى عن المتحف</small></a><a target="_blank" href="https://artsandculture.google.com/project/the-ancient-egypt" class="video-card"><span>↗</span><b>Google Arts & Culture</b><small>تجارب رقمية ومجموعات ثقافية</small></a></div></section>
-<section class="cta"><div><span class="eyebrow">المشروع</span><h2>موسوعة تُبنى لتكبر.</h2><p>هيكل قابل للتوسع لإضافة آلاف المواقع والقطع والمصادر والصور والفيديوهات والخرائط واللغتين العربية والإنجليزية.</p></div><div class="seal">𓋹<br><small>EGYPTIAN HERITAGE</small></div></section>
-</main><footer><div>تطوير وتنفيذ: <b>محمد شعبان محارب</b></div><span>موسوعة الآثار المصرية الكاملة</span></footer>
-<div id="modal" class="modal" onclick="closeModal(event)"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+<section class="hero">
+  <div class="hero-bg"></div><div class="hero-vignette"></div>
+  <div class="hero-content">
+    <div class="eyebrow"><span></span> موسوعة مصرية رقمية <span></span></div>
+    <h1>حين تتكلم <em>الحجارة</em><br>تبدأ الحكاية.</h1>
+    <p>اكتشف المعابد والمقابر والأهرامات والمتاحف والآثار التي صنعت ذاكرة مصر عبر آلاف السنين.</p>
+    <div class="hero-actions"><a class="gold-btn" href="#explore">ابدأ الاستكشاف <span>←</span></a><a class="ghost-btn" href="#timeline">شاهد الخط الزمني</a></div>
+    <div class="hero-stats"><div><b>العصور</b><span>من مصر القديمة إلى العصر الحديث</span></div><div><b>مواقع وآثار</b><span>بيانات قابلة للتوسع والتوثيق</span></div><div><b>مصادر</b><span>مؤسسات ومراجع موثوقة</span></div></div>
+  </div>
+  <div class="hero-corner">𓆣</div>
+</section>
+
+<section class="intro-strip"><div><span class="line"></span><b>من النيل إلى الخلود</b><span class="line"></span></div><p>واجهة واحدة تجمع القصص والمعلومات والصور والخرائط والمصادر في تجربة أقرب إلى زيارة متحف رقمي.</p></section>
+
+<section id="explore" class="section explore">
+  <div class="section-head"><div><span class="kicker">المجموعة الرئيسية</span><h2>استكشف الآثار</h2><p>ابحث بالاسم أو الموقع، ثم صفِّ النتائج حسب العصر والنوع والمحافظة.</p></div><div class="result-count"><b id="resultCount">0</b><span>نتيجة</span></div></div>
+  <div class="search-panel">
+    <label class="searchbox"><span>⌕</span><input id="search" placeholder="ابحث عن معبد، مقبرة، هرم، متحف..." oninput="render()"></label>
+    <select id="era" onchange="render()"><option value="">كل العصور</option><option>مصر القديمة</option><option>اليوناني والروماني</option><option>قبطي</option><option>إسلامي</option><option>حديث</option></select>
+    <select id="type" onchange="render()"><option value="">كل الأنواع</option><option>هرم</option><option>معبد</option><option>مقبرة</option><option>متحف</option><option>قلعة</option><option>دير</option><option>موقع أثري</option></select>
+    <select id="governorate" onchange="render()"><option value="">كل المحافظات</option><option>الجيزة</option><option>الأقصر</option><option>أسوان</option><option>قنا</option><option>المنيا</option><option>الإسكندرية</option><option>القاهرة</option><option>جنوب سيناء</option></select>
+  </div>
+  <div class="featured-grid" id="cards"></div>
+</section>
+
+<section class="quote-band"><div class="quote-mark">“</div><div><p>«مصر هبة النيل»</p><small>تعبير ارتبط بهيرودوت في وصف مكانة النهر في حياة مصر القديمة.</small></div></section>
+
+<section id="eras" class="section dark-section">
+  <div class="section-head light"><div><span class="kicker">رحلة عبر الزمن</span><h2>العصور المصرية</h2><p>كل عصر له لغته وعماراته وشواهده. اختر عصرًا لتستكشف آثاره.</p></div></div>
+  <div class="era-grid">
+    <button onclick="setEra('مصر القديمة')" class="era-card ancient"><span>𓂀</span><b>مصر القديمة</b><small>المعابد • المقابر • الأهرامات</small></button>
+    <button onclick="setEra('اليوناني والروماني')" class="era-card greek"><span>ϟ</span><b>اليوناني والروماني</b><small>مدن • معابد • مسارح</small></button>
+    <button onclick="setEra('قبطي')" class="era-card coptic"><span>✝</span><b>العصر القبطي</b><small>أديرة • كنائس • مخطوطات</small></button>
+    <button onclick="setEra('إسلامي')" class="era-card islamic"><span>☾</span><b>العصر الإسلامي</b><small>مساجد • قلاع • عمارة</small></button>
+    <button onclick="setEra('حديث')" class="era-card modern"><span>◇</span><b>العصر الحديث</b><small>متاحف • قصور • تراث</small></button>
+  </div>
+</section>
+
+<section id="timeline" class="section">
+  <div class="section-head"><div><span class="kicker">خط زمني</span><h2>مصر عبر العصور</h2><p>محطات مختصرة تساعدك على رؤية الامتداد التاريخي للحضارة المصرية.</p></div></div>
+  <div class="timeline" id="timelineList"></div>
+</section>
+
+<section id="museums" class="section museum-section">
+  <div class="section-head"><div><span class="kicker">مؤسسات الذاكرة</span><h2>متاحف تستحق الزيارة</h2><p>تعرف على مجموعة من أهم المتاحف والمراكز التي تحفظ التراث المصري.</p></div></div>
+  <div class="museum-grid">
+    <article class="museum-feature"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Grand%20Egyptian%20Museum%20in%20Giza.jpg" alt="المتحف المصري الكبير"><div><span>الجيزة</span><h3>المتحف المصري الكبير</h3><p>مؤسسة متحفية حديثة بجوار هضبة الجيزة، صُممت لتقديم مجموعات أثرية مصرية في تجربة معاصرة.</p><a href="https://grandegyptianmuseum.org/" target="_blank" rel="noopener">الموقع الرسمي ↗</a></div></article>
+    <article class="museum-feature"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Egyptian%20Museum%20in%20Cairo%2001.jpg" alt="المتحف المصري بالقاهرة"><div><span>القاهرة</span><h3>المتحف المصري</h3><p>من أبرز متاحف الآثار المصرية، ويضم مجموعات كبيرة من عصور مختلفة.</p><a href="https://egymonuments.gov.eg/" target="_blank" rel="noopener">بوابة وزارة السياحة والآثار ↗</a></div></article>
+    <article class="museum-feature"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/National%20Museum%20of%20Egyptian%20Civilization.jpg" alt="المتحف القومي للحضارة المصرية"><div><span>القاهرة</span><h3>المتحف القومي للحضارة المصرية</h3><p>يعرض جوانب واسعة من الحضارة المصرية عبر فترات تاريخية متعددة.</p><a href="https://nmec.gov.eg/" target="_blank" rel="noopener">الموقع الرسمي ↗</a></div></article>
+  </div>
+</section>
+
+<section id="videos" class="section video-section">
+  <div class="section-head"><div><span class="kicker">شاهد واكتشف</span><h2>الفيديوهات</h2><p>فيديوهات مرتبطة بالآثار والمتاحف؛ تُفتح على YouTube أو المصدر الأصلي عند الطلب.</p></div></div>
+  <div class="video-grid">
+    <a class="video-card" href="https://www.youtube.com/results?search_query=Egyptian+Ministry+of+Tourism+and+Antiquities+official" target="_blank" rel="noopener"><div class="video-thumb ministry"><i>▶</i><span>المصدر الرسمي</span></div><div><small>وزارة السياحة والآثار</small><h3>جولة في التراث المصري</h3><p>ابحث داخل القناة والمحتوى الرسمي عن المواقع والمتاحف.</p></div></a>
+    <a class="video-card" href="https://www.youtube.com/results?search_query=Grand+Egyptian+Museum+official" target="_blank" rel="noopener"><div class="video-thumb gem"><i>▶</i><span>المتحف المصري الكبير</span></div><div><small>Grand Egyptian Museum</small><h3>استكشف المتحف المصري الكبير</h3><p>مواد مرئية وجولات ومحتوى تعريفي عن المتحف ومقتنياته.</p></div></a>
+    <a class="video-card" href="https://www.youtube.com/watch?v=tR6b2VDjrvA" target="_blank" rel="noopener"><div class="video-thumb tour"><i>▶</i><span>جولة 4K</span></div><div><small>YouTube</small><h3>جولة مصورة في المتحف المصري الكبير</h3><p>جولة خارجية من ناشر مستقل — موضحة كمصدر غير رسمي.</p></div></a>
+  </div>
+</section>
+
+<section class="source-note"><div class="seal">𓋹</div><div><span class="kicker">منهج الموسوعة</span><h2>المعلومة قبل الزخرفة</h2><p>المحتوى قابل للتوسع مع إحالة واضحة إلى المصادر. الصور الخارجية مرتبطة بمصادرها، والفيديوهات تُفتح من منصاتها الأصلية.</p><div class="sources"><a href="https://whc.unesco.org/en/statesparties/eg" target="_blank">UNESCO</a><a href="https://egymonuments.gov.eg/" target="_blank">وزارة السياحة والآثار</a><a href="https://www.britishmuseum.org/collection" target="_blank">British Museum</a></div></div></section>
+</main>
+
+<footer><div><b>موسوعة الآثار المصرية الكاملة</b><span>مشروع معرفي رقمي قابل للتوسع</span></div><div>تطوير وتنفيذ: <strong>محمد شعبان محارب</strong></div></footer>
+
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()"><div class="modal-box"><button class="modal-close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+<div id="toast"></div>
 <script src="data.js"></script><script src="app.js"></script>
 </body></html>
