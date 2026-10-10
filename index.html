@@ -61,13 +61,18 @@ const videoLibrary=[
  {title:'قصة سيدنا آدم عليه السلام',subject:'آدم',id:'ofejPs3W8LE',channel:'التاريخ الإسلامي'},
  {title:'قصة سيدنا إدريس عليه السلام',subject:'إدريس',id:'mMnrFv3HGuc',channel:'التاريخ الإسلامي'},
  {title:'قصة سيدنا نوح عليه السلام',subject:'نوح',id:'R8eTFlrSAfE',channel:'التاريخ الإسلامي'},
+ {title:'قصة سيدنا هود عليه السلام',subject:'هود',id:'SRR44oUWQKY',channel:'العلم النافع HD'},
+ {title:'قصة سيدنا لوط عليه السلام',subject:'لوط',id:'jr5C0ZMQvCU',channel:'أنس آكشن'},
  {title:'قصة سيدنا إبراهيم عليه السلام',subject:'إبراهيم',id:'RFsDCuUSw_E',channel:'التاريخ الإسلامي'},
+ {title:'قصة سيدنا إسماعيل عليه السلام',subject:'إسماعيل',id:'C6nKADcxTi4',channel:'نفحات'},
+ {title:'قصة سيدنا إسحاق عليه السلام',subject:'إسحاق',id:'pKfYcmqBW8c',channel:'قصص وحكايات دينية'},
  {title:'قصة سيدنا صالح عليه السلام',subject:'صالح',id:'zJ4FxbStKEs',channel:'التاريخ الإسلامي'},
  {title:'قصة سيدنا شعيب عليه السلام',subject:'شعيب',id:'zCsjD0behFU',channel:'التاريخ الإسلامي'},
  {title:'قصة سيدنا يوسف عليه السلام',subject:'يوسف',id:'zoSTZ37FPek',channel:'التاريخ الإسلامي'},
  {title:'قصة سيدنا يعقوب عليه السلام',subject:'يعقوب',id:'f5Vy8Sy-gtY',channel:'قصص وحكايات دينية'},
  {title:'قصة سيدنا أيوب عليه السلام',subject:'أيوب',id:'fDjSqycfpMA',channel:'إسلاميات HD'},
  {title:'قصة سيدنا موسى عليه السلام',subject:'موسى',id:'YZ-W5QrbBNM',channel:'ماسبيرو أطفال'},
+ {title:'قصة سيدنا هارون عليه السلام',subject:'هارون',id:'eDsRyAzyu3w',channel:'دين وحياة'},
  {title:'قصة سيدنا سليمان عليه السلام',subject:'سليمان',id:'FA1NZdvQ5jY',channel:'التاريخ الإسلامي'},
  {title:'قصة سيدنا داود عليه السلام',subject:'داود',id:'VWS65eYSd74',channel:'نبيل العوضي'},
  {title:'قصة سيدنا عيسى عليه السلام',subject:'عيسى',id:'ZdTIMR5JQdg',channel:'Tareq Amro'},
@@ -98,21 +103,26 @@ function videoForProphet(name){
  if(n.startsWith('آدم'))return match('آدم');
  if(n.startsWith('إدريس'))return match('إدريس');
  if(n.startsWith('نوح'))return match('نوح');
+ if(n.startsWith('هود'))return match('هود');
+ if(n.startsWith('لوط'))return match('لوط');
  if(n.startsWith('إبراهيم'))return match('إبراهيم');
- if(n.startsWith('يوسف'))return match('يوسف');
- if(n.startsWith('يعقوب'))return match('يعقوب');
- if(n.startsWith('موسى'))return match('موسى');
- if(n.startsWith('سليمان'))return match('سليمان');
- if(n.startsWith('داود'))return match('داود');
+ if(n.startsWith('إسماعيل'))return match('إسماعيل');
+ if(n.startsWith('إسحاق'))return match('إسحاق');
  if(n.startsWith('صالح'))return match('صالح');
  if(n.startsWith('شعيب'))return match('شعيب');
+ if(n.startsWith('يوسف'))return match('يوسف');
+ if(n.startsWith('يعقوب'))return match('يعقوب');
  if(n.startsWith('أيوب'))return match('أيوب');
+ if(n.startsWith('موسى'))return match('موسى');
+ if(n.startsWith('هارون'))return match('هارون');
+ if(n.startsWith('سليمان'))return match('سليمان');
+ if(n.startsWith('داود'))return match('داود');
+ if(n.startsWith('عيسى'))return match('عيسى');
  if(n.startsWith('يونس'))return match('يونس');
  if(n.startsWith('زكريا'))return match('زكريا');
  if(n.startsWith('يحيى'))return match('يحيى');
  if(n.startsWith('إلياس')||n.startsWith('اليسع'))return match('إلياس واليسع');
  if(n.startsWith('ذو الكفل'))return match('ذو الكفل');
- if(n.startsWith('عيسى'))return match('عيسى');
  return null;
 }
 
