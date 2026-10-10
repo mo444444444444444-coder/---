@@ -59,10 +59,16 @@ const islam=[["📚 علوم القرآن","كيف نزل القرآن وجُم�
 const videoLibrary=[
  {title:'السيرة النبوية — قصة نبينا محمد ﷺ',subject:'محمد ﷺ',id:'Qebo75plRCE',channel:'نبيل العوضي',source:'معرفة الله'},
  {title:'قصة سيدنا آدم عليه السلام',subject:'آدم',id:'ofejPs3W8LE',channel:'التاريخ الإسلامي'},
+ {title:'قصة سيدنا إدريس عليه السلام',subject:'إدريس',id:'mMnrFv3HGuc',channel:'التاريخ الإسلامي'},
  {title:'قصة سيدنا نوح عليه السلام',subject:'نوح',id:'R8eTFlrSAfE',channel:'التاريخ الإسلامي'},
  {title:'قصة سيدنا إبراهيم عليه السلام',subject:'إبراهيم',id:'RFsDCuUSw_E',channel:'التاريخ الإسلامي'},
+ {title:'قصة سيدنا صالح عليه السلام',subject:'صالح',id:'zJ4FxbStKEs',channel:'التاريخ الإسلامي'},
+ {title:'قصة سيدنا شعيب عليه السلام',subject:'شعيب',id:'zCsjD0behFU',channel:'التاريخ الإسلامي'},
  {title:'قصة سيدنا يوسف عليه السلام',subject:'يوسف',id:'zoSTZ37FPek',channel:'التاريخ الإسلامي'},
+ {title:'قصة سيدنا أيوب عليه السلام',subject:'أيوب',id:'fDjSqycfpMA',channel:'إسلاميات HD'},
  {title:'قصة سيدنا موسى عليه السلام',subject:'موسى',id:'YZ-W5QrbBNM',channel:'ماسبيرو أطفال'},
+ {title:'قصة سيدنا سليمان عليه السلام',subject:'سليمان',id:'FA1NZdvQ5jY',channel:'التاريخ الإسلامي'},
+ {title:'قصة سيدنا عيسى عليه السلام',subject:'عيسى',id:'ZdTIMR5JQdg',channel:'Tareq Amro'},
  {title:'قصة سيدنا يونس عليه السلام',subject:'يونس',id:'Pfc38dZQ29g',channel:'كنوز القصص الإسلامية'},
  {title:'غزوة بدر الكبرى — وثائقي',subject:'بدر',id:'OHnJmcyNIsU',channel:'Documentary Atlas'}
 ];
@@ -87,7 +93,13 @@ function videoForProphet(name){
  if(n.startsWith('يوسف'))return videoLibrary[4];
  if(n.startsWith('موسى'))return videoLibrary[5];
  if(n.startsWith('يونس'))return videoLibrary[6];
- if(n.startsWith('محمد'))return videoLibrary[0];
+ if(n.startsWith('محمد'))return videoLibrary.find(v=>v.subject==='محمد ﷺ');
+ if(n.startsWith('إدريس'))return videoLibrary.find(v=>v.subject==='إدريس');
+ if(n.startsWith('صالح'))return videoLibrary.find(v=>v.subject==='صالح');
+ if(n.startsWith('شعيب'))return videoLibrary.find(v=>v.subject==='شعيب');
+ if(n.startsWith('أيوب'))return videoLibrary.find(v=>v.subject==='أيوب');
+ if(n.startsWith('سليمان'))return videoLibrary.find(v=>v.subject==='سليمان');
+ if(n.startsWith('عيسى'))return videoLibrary.find(v=>v.subject==='عيسى');
  return null;
 }
 
